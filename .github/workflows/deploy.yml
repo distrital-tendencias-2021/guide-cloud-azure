@@ -1,7 +1,10 @@
 name: Deploy into aks
 
 on:
-  pull_request:
+#Manually trigger workflow runs
+  workflow_dispatch:
+  #Trigger the workflow on push from the main branch
+  push:
     branches: [ pipelines ]
 
 # Environment variables available to all jobs and steps in this workflow

@@ -35,7 +35,8 @@ jobs:
 
 
       - name: package
-        run : ../scripts/package.sh
+        run : |
+          ../scripts/package.sh
 
       # Container build and push to a Azure Container Registry (ACR)
 

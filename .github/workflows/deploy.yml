@@ -22,7 +22,7 @@ jobs:
     steps:
       - name: package
         run: |
-         sudo ../scripts/package.sh
+          bash ../scripts/package.sh
       - uses: actions/checkout@main
 
       # This Checkout is necessary when using a context in docker/build-push-action

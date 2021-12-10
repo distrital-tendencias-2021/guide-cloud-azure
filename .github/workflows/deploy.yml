@@ -6,12 +6,12 @@ on:
 
 # Environment variables available to all jobs and steps in this workflow
 env:
-  REGISTRY_NAME: {registry-name}
-  CLUSTER_NAME: {cluster-name}
-  CLUSTER_RESOURCE_GROUP: {resource-group-name}
-  NAMESPACE: {namespace-name}
-  SECRET: {secret-name}
-  APP_NAME: {app-name}
+  REGISTRY_NAME: containerregistryguide
+  CLUSTER_NAME: guideCluster2
+  CLUSTER_RESOURCE_GROUP: guideGroup2
+  NAMESPACE: namespace
+  SECRET: guidesecret
+  APP_NAME: system
 
 jobs:
   build:

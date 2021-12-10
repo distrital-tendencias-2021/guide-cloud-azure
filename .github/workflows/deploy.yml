@@ -2,7 +2,7 @@ name: Deploy into aks
 
 on:
   pull_request:
-    branches: [ prod ]
+    branches: [ pipelines ]
 
 # Environment variables available to all jobs and steps in this workflow
 env:

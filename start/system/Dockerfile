@@ -1,7 +1,7 @@
 FROM maven:3.6-jdk-8-alpine AS builder
-COPY pom.xml .
+COPY ./system/pom.xml .
 RUN mvn –e –B dependency:resolve
-COPY src ./src
+COPY ./system/src ./src
 RUN mvn –e –B package
 
 FROM openliberty/open-liberty:full-java11-openj9-ubi

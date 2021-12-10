@@ -1,8 +1,3 @@
-FROM maven:3.6-jdk-8-alpine
-COPY pom.xml /app/
-COPY src /app/src
-RUN cd /app && mvn –e –B package
-
 FROM openliberty/open-liberty:full-java11-openj9-ubi
 
 ARG VERSION=1.0

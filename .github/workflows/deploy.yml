@@ -33,6 +33,10 @@ jobs:
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
+
+      - name: package
+        run : ../scripts/package.sh
+
       # Container build and push to a Azure Container Registry (ACR)
 
       - run: |

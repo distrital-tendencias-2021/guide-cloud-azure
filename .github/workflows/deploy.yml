@@ -22,9 +22,14 @@ jobs:
     steps:
       - name: package
         run: |
-          bash ../scripts/package.sh
-      - uses: actions/checkout@main
+          # make file runnable, might not be necessary
+          chmod +x "${GITHUB_WORKSPACE}/scripts/package.sh"
 
+          # run script
+          "${GITHUB_WORKSPACE}/scripts/package.sh"
+
+
+      - uses: actions/checkout@main
       # This Checkout is necessary when using a context in docker/build-push-action
       - name: Checkout
         uses: actions/checkout@v2

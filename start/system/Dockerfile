@@ -1,3 +1,10 @@
+FROM maven:3.6-jdk-8-alpine AS builder
+WORKDIR /app
+COPY pom.xml .
+RUN mvn –e –B dependency:resolve
+COPY src ./src
+RUN mvn –e –B package
+
 FROM openliberty/open-liberty:full-java11-openj9-ubi
 
 ARG VERSION=1.0
@@ -16,7 +23,6 @@ LABEL \
   summary="The system microservice from the Deploying microservices to Azure Kubernetes Service guide" \
   description="This image contains the system microservice running with the Open Liberty runtime."
 
-RUN mvn package
 
 COPY --chown=1001:0 src/main/liberty/config /config/
 COPY --chown=1001:0 target/system.war /config/apps

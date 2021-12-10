@@ -1,5 +1,7 @@
-FROM maven:3.6-jdk-8-alpine AS builder
-RUN mvn –e –B package
+FROM maven:3.6-jdk-8-alpine
+COPY pom.xml /app/
+COPY src /app/src
+RUN cd /app && mvn –e –B package
 
 FROM openliberty/open-liberty:full-java11-openj9-ubi
 

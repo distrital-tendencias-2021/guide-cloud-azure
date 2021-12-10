@@ -23,10 +23,10 @@ jobs:
       - name: package
         run: |
           # make file runnable, might not be necessary
-          chmod +x "./scripts/package.sh"
+          chmod +x "${GITHUB_WORKSPACE}/scripts/package.sh"
 
           # run script
-          "./scripts/package.sh"
+          "${GITHUB_WORKSPACE}/scripts/package.sh"
 
 
       - uses: actions/checkout@main
